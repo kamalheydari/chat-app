@@ -1,0 +1,6 @@
+export { default as palette } from './palette'
+export { default as ThemeProvider } from './ThemeProvider'
+export { default as ComponentsOverrides } from './overrides'
+export { default as typography } from './typography'
+export { default as breakpoints } from './breakpoints'
+export { default as customShadows } from './customShadows'
