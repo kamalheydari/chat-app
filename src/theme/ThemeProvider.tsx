@@ -8,12 +8,14 @@ import { CssBaseline } from '@mui/material'
 
 import { ComponentsOverrides, typography, breakpoints, palette, customShadows } from '@/theme'
 import { useMemo } from 'react'
+import { useSettings } from '@/hooks'
 
-//! -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
+// -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Todo //   Replace this whit theme Mode
-  const isLight = false
+  const { themeMode } = useSettings()
+
+  const isLight = themeMode === 'light'
 
   const themeOptions: ThemeOptions = useMemo(
     () => ({
@@ -27,10 +29,10 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
     [isLight]
   )
 
-  // ? Create Theme
+  //  Create Theme
   const theme = createTheme(themeOptions)
 
-  // ? Override components
+  //  Override components
   theme.components = ComponentsOverrides(theme)
 
   return (
