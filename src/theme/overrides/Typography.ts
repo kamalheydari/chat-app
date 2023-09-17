@@ -1,26 +1,41 @@
-import type { Theme } from '@mui/material/styles'
+import type { Theme, Components } from '@mui/material/styles'
 
-export default function Typography(theme: Theme) {
-  return {
-    MuiTypography: {
-      variants: [
-        {
-          props: { variant: 'article' },
-          style: {
-            fontWeight: 700,
-            color: theme.palette.common.black,
-          },
-        },
-      ],
-
-      styleOverrides: {
-        paragraph: {
-          marginBottom: theme.spacing(1),
-        },
-        gutterBottom: {
-          marginBottom: theme.spacing(1),
-        },
-      },
-    },
+// ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add article variant ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    article: React.CSSProperties
+  }
+  interface TypographyVariantsOptions {
+    article?: React.CSSProperties
   }
 }
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    article: true
+  }
+}
+// ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add article variant ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
+
+const MuiTypography: Components<Theme>['MuiTypography'] = {
+  variants: [
+    {
+      props: { variant: 'article' },
+      style: { fontWeight: 700 },
+    },
+  ],
+  styleOverrides: {
+    paragraph: ({ theme }) => {
+      return {
+        marginBottom: theme.spacing(2),
+      }
+    },
+    gutterBottom: ({ theme }) => {
+      return {
+        marginBottom: theme.spacing(1),
+      }
+    },
+  },
+}
+
+export default MuiTypography

@@ -1,3 +1,5 @@
+import { useMemo } from 'react'
+
 import {
   createTheme,
   ThemeProvider as MUIThemeProvider,
@@ -6,10 +8,9 @@ import {
 } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
 
-import { ComponentsOverrides, typography, breakpoints, palette, customShadows } from '@/theme'
-import { useMemo } from 'react'
 import { useSettings } from '@/hooks'
 
+import { typography, breakpoints, palette, customShadows, components } from '@/theme'
 // -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -25,15 +26,13 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
       breakpoints,
       direction: 'ltr',
       customShadows: isLight ? customShadows.light : customShadows.dark,
+      components,
     }),
     [isLight]
   )
 
   //  Create Theme
   const theme = createTheme(themeOptions)
-
-  //  Override components
-  theme.components = ComponentsOverrides(theme)
 
   return (
     <StyledEngineProvider injectFirst>

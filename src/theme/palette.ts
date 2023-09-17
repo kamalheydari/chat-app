@@ -1,33 +1,28 @@
 import { alpha } from '@mui/material/styles'
 
-import type { PaletteColor, TypeAction } from '@mui/material'
-
-//! -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
+import type { PaletteColor, TypeAction, Color } from '@mui/material'
+// -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
 type PaletteMode = 'light' | 'dark'
 
 const lightMode: PaletteMode = 'light'
 const darkMode: PaletteMode = 'dark'
 
-const grey = {
-  0: '#FFFFFF',
-  100: '#F9FAFB',
-  200: '#F4F6F8',
-  300: '#DFE3E8',
-  400: '#C4CDD5',
-  500: '#919EAB',
-  600: '#637381',
-  700: '#454F5B',
-  800: '#212B36',
-  900: '#161C24',
-  500_8: alpha('#919EAB', 0.08),
-  500_12: alpha('#919EAB', 0.12),
-  500_16: alpha('#919EAB', 0.16),
-  500_24: alpha('#919EAB', 0.24),
-  500_32: alpha('#919EAB', 0.32),
-  500_48: alpha('#919EAB', 0.48),
-  500_56: alpha('#919EAB', 0.56),
-  500_80: alpha('#919EAB', 0.8),
+const grey: Color = {
+  50: '#F9FAFB',
+  100: '#F4F6F8',
+  200: '#C4CDD5',
+  300: '#919EAB',
+  400: '#637381',
+  500: '#212B36',
+  600: '#161C24',
+  700: alpha('#919EAB', 0.08),
+  800: alpha('#919EAB', 0.12),
+  900: alpha('#919EAB', 0.16),
+  A100: alpha('#919EAB', 0.24),
+  A200: alpha('#919EAB', 0.32),
+  A400: alpha('#919EAB', 0.56),
+  A700: alpha('#919EAB', 0.8),
 }
 
 const primary: PaletteColor = {
@@ -89,15 +84,15 @@ const common = {
   error,
   // @ts-ignore
   grey,
-  divider: grey[500_24],
+  divider: grey['A100'],
 }
 
 const action: Partial<TypeAction> = {
-  hover: grey[500_8],
-  selected: grey[500_16],
-  disabled: grey[500_80],
-  disabledBackground: grey[500_24],
-  focus: grey[500_24],
+  hover: grey[700],
+  selected: grey[900],
+  disabled: grey['A700'],
+  disabledBackground: grey['A100'],
+  focus: grey['A100'],
   hoverOpacity: 0.08,
 }
 
@@ -113,7 +108,7 @@ const palette = {
     ...common,
     mode: darkMode,
     text: { primary: '#fff', secondary: grey[500], disabled: grey[600] },
-    background: { paper: grey[800], default: grey[900], neutral: grey[500_16] },
+    background: { paper: grey[800], default: grey[900], neutral: grey[900] },
     action: { active: grey[500], ...action },
   },
 }

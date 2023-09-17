@@ -1,8 +1,8 @@
 import React from 'react'
-//! -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
+// -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
 declare module '@mui/material/styles' {
-  //? ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add custom shadow to theme ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
+  // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add custom shadow to theme ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
   interface Theme {
     customShadows: {
       z1: string
@@ -42,17 +42,17 @@ declare module '@mui/material/styles' {
       dropdown: React.CSSProperties['boxShadow']
     }
   }
-  //? ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add custom shadow to theme ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
+  // ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add custom shadow to theme ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
 
-  //? ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add neutral color to bg colors ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
+  // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add neutral color to bg colors ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
   interface TypeBackground {
     default: string
     paper: string
     neutral: string
   }
-  //? ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add neutral color to bg colors ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
+  // ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add neutral color to bg colors ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
 
-  //? ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add darker and lighter to all color palettes ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
+  // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add darker and lighter to all color palettes ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
   interface PaletteColor {
     darker: string
     lighter: string
@@ -62,22 +62,5 @@ declare module '@mui/material/styles' {
     darker: React.CSSProperties['color']
     lighter: React.CSSProperties['color']
   }
-  //? ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add darker and lighter to all color palettes ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
+  // ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add darker and lighter to all color palettes ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
 }
-
-//? ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ Add article variant to Typography componenet ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
-declare module '@mui/material/styles' {
-  interface TypographyVariants {
-    article: React.CSSProperties
-  }
-  interface TypographyVariantsOptions {
-    article?: React.CSSProperties
-  }
-}
-
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    article: true
-  }
-}
-//? ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ Add article variant to Typography componenet ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃

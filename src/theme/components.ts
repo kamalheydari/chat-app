@@ -1,0 +1,51 @@
+import type { Theme, Components } from '@mui/material/styles'
+
+import {
+  MuiTypography,
+  MuiLink,
+  MuiButton,
+  MuiAvatar,
+  MuiAvatarGroup,
+  MuiBadge,
+  MuiPaper,
+  MuiInputBase,
+  MuiInput,
+  MuiAutocomplete,
+  MuiSwitch,
+  MuiFab,
+  MuiTabs,
+  MuiTab,
+  MuiMenuItem,
+  MuiRadio,
+  MuiAlert,
+  MuiTooltip,
+  MuiBackdrop,
+  MuiSvgIcon,
+  MuiCssBaseline,
+} from './overrides'
+
+const components: Components<Theme> = {
+  MuiTypography,
+  MuiLink,
+  MuiButton,
+  MuiAvatar,
+  MuiAvatarGroup,
+  MuiBadge,
+  MuiPaper,
+  MuiInputBase,
+  MuiInput,
+  MuiAutocomplete,
+  MuiSwitch,
+  MuiFab,
+  MuiTabs,
+  MuiTab,
+  MuiMenuItem,
+  MuiRadio,
+  MuiAlert,
+  MuiTooltip,
+  MuiBackdrop,
+  MuiSvgIcon,
+  MuiCssBaseline,
+}
+
+export default components
