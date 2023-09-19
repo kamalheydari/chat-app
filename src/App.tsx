@@ -1,3 +1,9 @@
+import Router from '@/routes'
+
 export default function App() {
-return <div>App</div>;
+  return (
+    <div>
+      <Router />
+    </div>
+  )
 }
