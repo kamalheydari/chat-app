@@ -11,7 +11,7 @@ const MuiPaper: Components<Theme>['MuiPaper'] = {
     },
 
     outlined: ({ theme: { palette } }) => ({
-      borderColor: palette.grey[800],
+      borderColor: palette.grey['500_12' as keyof typeof palette.grey],
     }),
   },
 }

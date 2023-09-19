@@ -13,10 +13,10 @@ const MuiButton: Components<Theme>['MuiButton'] = {
 
     // contained
     containedInherit: ({ theme: { customShadows, palette } }) => ({
-      color: palette.grey[500],
+      color: palette.grey[800],
       boxShadow: customShadows.z8,
       ':hover': {
-        backgroundColor: palette.grey[200],
+        backgroundColor: palette.grey[400],
       },
     }),
 
@@ -46,7 +46,7 @@ const MuiButton: Components<Theme>['MuiButton'] = {
 
     // outlined
     outlinedInherit: ({ theme: { palette } }) => ({
-      border: `1px solid ${palette.grey['A200']}`,
+      border: `1px solid ${palette.grey['500_32' as keyof typeof palette.grey]}`,
       backgroundColor: palette.action.hover,
     }),
 

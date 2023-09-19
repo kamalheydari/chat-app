@@ -3,7 +3,7 @@ import { palette } from '@/theme'
 
 // -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
-const LIGHT_MODE = palette.light.grey[300]
+const LIGHT_MODE = palette.light.grey[500]
 const DARK_MODE = '#000000'
 
 const createCustomShadow = (color: string) => {

@@ -1,8 +1,8 @@
 import { type Theme, type Components, alpha } from '@mui/material/styles'
 
 // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ / Handlers / ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
-const verLow = (theme: Theme) => alpha(theme.palette.grey[600], 0.48)
-const varHigh = (theme: Theme) => alpha(theme.palette.grey[600], 1)
+const verLow = (theme: Theme) => alpha(theme.palette.grey[900], 0.48)
+const varHigh = (theme: Theme) => alpha(theme.palette.grey[900], 1)
 // ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ / Handlers / ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
 
 const MuiBackdrop: Components<Theme>['MuiBackdrop'] = {

@@ -9,7 +9,7 @@ const MuiFab: Components<Theme>['MuiFab'] = {
       boxShadow: customShadows.z8,
       ':hover': {
         boxShadow: 'none',
-        backgroundColor: palette.grey[200],
+        backgroundColor: palette.grey[400],
       },
     }),
 

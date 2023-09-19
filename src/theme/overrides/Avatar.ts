@@ -4,7 +4,7 @@ export const MuiAvatar: Components<Theme>['MuiAvatar'] = {
   styleOverrides: {
     colorDefault: ({ theme: { palette } }) => ({
       color: palette.text.secondary,
-      backgroundColor: palette.grey[200],
+      backgroundColor: palette.grey[400],
     }),
   },
 }

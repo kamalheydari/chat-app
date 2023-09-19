@@ -15,7 +15,7 @@ export const MuiInput: Components<Theme>['MuiInput'] = {
   styleOverrides: {
     underline: ({ theme: { palette } }) => ({
       '&:before': {
-        borderBottomColor: palette.grey['A400'],
+        borderBottomColor: palette.grey['500_56' as keyof typeof palette.grey],
       },
     }),
   },
