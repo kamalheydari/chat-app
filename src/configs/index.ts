@@ -1,24 +1,4 @@
-export const htmlFontSize = 16
-export const settingsLocalStorageName = 'settings'
+export * from './ui'
+export { default as routePaths } from './routePaths'
+export { default as queryClient } from './queryClient'
 
-export const routePaths = {
-  auth: {
-    root: 'auth',
-    login: 'login',
-    register: 'register',
-    resetPassword: 'reset-password',
-    newPassword: 'new-password',
-    verify: 'verify',
-  },
-  dashboard: {
-    root: '',
-    app: 'app',
-    group: 'group',
-    settings: 'settings',
-    conversation: 'conversation',
-    chats: 'chats',
-    contact: 'contact',
-    profile: 'profile',
-    call: 'call',
-  },
-}
