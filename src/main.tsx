@@ -10,21 +10,26 @@ import { Toaster } from 'react-hot-toast'
 
 import App from './App.tsx'
 
-import { SettingProvider } from '@/contexts'
+import { AuthProvider, SettingProvider } from '@/contexts'
 import { ThemeProvider } from '@/theme'
 import { queryClient } from '@/configs'
+import AuthMiddleware from './middlewares/AuthMiddleware.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <SettingProvider>
       <ThemeProvider>
-        <BrowserRouter>
-          <QueryClientProvider client={queryClient}>
-            <App />
-            <Toaster position='bottom-right' />
-            <ReactQueryDevtools />
-          </QueryClientProvider>
-        </BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <BrowserRouter>
+              <AuthMiddleware>
+                <App />
+              </AuthMiddleware>
+              <Toaster position="bottom-right" />
+              <ReactQueryDevtools />
+            </BrowserRouter>
+          </AuthProvider>
+        </QueryClientProvider>
       </ThemeProvider>
     </SettingProvider>
   </React.StrictMode>

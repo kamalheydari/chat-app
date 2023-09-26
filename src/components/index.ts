@@ -1,2 +1,6 @@
 export * from './CustomIcons'
 export { default as LoadingScreen } from './LoadingScreen'
+export { default as RegisterForm } from './forms/RegisterForm'
+export { default as LoginForm } from './forms/LoginForm'
+export { default as ControlledTextField } from './commons/ControlledTextField'
+export { default as PasswordInput } from './commons/PasswordInput'
