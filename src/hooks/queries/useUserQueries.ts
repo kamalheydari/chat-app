@@ -1,21 +1,19 @@
+import { type UseQueryResult, type UseQueryOptions, useQuery } from '@tanstack/react-query'
+import { useCookies } from 'react-cookie'
+
 import { getMeApi } from '@/services'
 import type { GetMeResponseData } from '@/types'
-import { type UseQueryResult, useQuery } from '@tanstack/react-query'
+// -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
-// ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ / Types / ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
-interface Options {
-  onGetMeSuccess?: (data: GetMeResponseData) => void
-  enabled?: boolean
-}
-// ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ / Types / ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
+export function useGetMe(
+  options: UseQueryOptions<GetMeResponseData, Error> = {}
+): UseQueryResult<GetMeResponseData, Error> {
+  const [cookies] = useCookies(['logged_in'])
 
-export function useGetMe(options: Options = {}): UseQueryResult<GetMeResponseData, Error> {
   return useQuery({
     queryFn: getMeApi,
-    onSuccess: (data) => {
-      options?.onGetMeSuccess?.(data)
-    },
-    enabled: options?.enabled,
     retry: 1,
+    enabled: !!cookies.logged_in,
+    ...options,
   })
 }

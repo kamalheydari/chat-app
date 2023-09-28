@@ -7,9 +7,6 @@ export interface LoginRequestData {
 export interface LoginResponseData {
   status: string
   message: string
-  data: {
-    user: IUser
-  }
 }
 
 export interface RegisterRequestData {
@@ -21,9 +18,6 @@ export interface RegisterRequestData {
 export interface RegisterResponseData {
   status: string
   message: string
-  data: {
-    user: IUser
-  }
 }
 
 export interface LogoutResponseData {

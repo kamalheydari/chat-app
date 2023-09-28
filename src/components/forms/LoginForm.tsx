@@ -1,22 +1,19 @@
+import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
 
-import { ControlledTextField, PasswordInput } from '@/components'
 import { LoadingButton } from '@mui/lab'
 import { Stack } from '@mui/material'
+import { ControlledTextField, PasswordInput } from '@/components'
 
 import { LoginSchema } from '@/utils'
-
-import { useLogin, useAuth } from '@/hooks'
-
-import type { LoginFormData } from '@/types'
-import { useNavigate } from 'react-router-dom'
+import { useLogin } from '@/hooks'
 import { routePaths } from '@/configs'
+import type { LoginFormData } from '@/types'
 // -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
 const LoginForm = () => {
-  const { login } = useAuth()
-
   const navigate = useNavigate()
 
   // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ / From Hook / ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
@@ -38,8 +35,8 @@ const LoginForm = () => {
 
   // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ / Query / ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
   const { mutate, isLoading } = useLogin({
-    onLoginSuccess: (data) => {
-      login(data.data.user)
+    onSuccess: (data) => {
+      toast.success(data.message)
       reset()
       navigate('/' + routePaths.dashboard.app, { replace: true })
     },

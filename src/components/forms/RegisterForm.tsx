@@ -1,5 +1,5 @@
+import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
-
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
@@ -8,17 +8,12 @@ import { LoadingButton } from '@mui/lab'
 import { ControlledTextField, PasswordInput } from '@/components'
 
 import { registerSchema } from '@/utils'
-
-import { useRegister, useAuth } from '@/hooks'
-
+import { useRegister } from '@/hooks'
 import { routePaths } from '@/configs'
-
 import type { RegisterFormData } from '@/types'
 // -_-_-_-_-_-_-_-___/ imports /___-_-_-_-_-_-_-_-
 
 const RegisterForm = () => {
-  const { login } = useAuth()
-
   const navigate = useNavigate()
 
   // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ / Form Hook / ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
@@ -42,8 +37,8 @@ const RegisterForm = () => {
 
   // ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄ / Query / ⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄⌄
   const { mutate, isLoading } = useRegister({
-    onRegisterSuccess: (data) => {
-      login(data.data.user)
+    onSuccess: (data) => {
+      toast.success(data.message)
       reset()
       navigate('/' + routePaths.dashboard.app, { replace: true })
     },
