@@ -1,22 +1,14 @@
 const routePaths = {
+  root: '/',
   auth: {
     root: 'auth',
     login: 'login',
     register: 'register',
-    resetPassword: 'reset-password',
-    newPassword: 'new-password',
-    verify: 'verify',
   },
   dashboard: {
-    root: '',
-    app: 'app',
-    group: 'group',
-    settings: 'settings',
-    conversation: 'conversation',
+    root: 'app',
     chats: 'chats',
-    contact: 'contact',
-    profile: 'profile',
-    call: 'call',
+    chat: (id?: string) => (id ? `chats/${id}` : ':id'),
   },
 }
 

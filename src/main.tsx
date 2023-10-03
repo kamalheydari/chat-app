@@ -13,6 +13,7 @@ import App from './App.tsx'
 import { SettingProvider } from '@/contexts'
 import { ThemeProvider } from '@/theme'
 import { queryClient } from '@/configs'
+import '@/styles/browser.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

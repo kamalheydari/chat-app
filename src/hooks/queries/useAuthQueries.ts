@@ -23,6 +23,7 @@ export function useLogin(
 ): UseMutationResult<LoginResponseData, unknown, LoginRequestData> {
   return useMutation({
     mutationFn: loginApi,
+    mutationKey: ['login'],
     ...options,
   })
 }
@@ -32,6 +33,7 @@ export function useRegister(
 ): UseMutationResult<RegisterResponseData, unknown, RegisterRequestData> {
   return useMutation({
     mutationFn: registerApi,
+    mutationKey: ['register'],
     ...options,
   })
 }

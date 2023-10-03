@@ -31,7 +31,7 @@ const grey = {
 
 const primary: PaletteColor = {
   lighter: '#C8FACD',
-  light: '#5BE584',
+  light: '#5B96F7',
   main: '#0162C4',
   dark: '#007B55',
   darker: '#005249',
@@ -104,7 +104,7 @@ const palette = {
     ...common,
     mode: lightMode,
     text: { primary: grey[800], secondary: grey[600], disabled: grey[500] },
-    background: { paper: '#fff', default: '#fff', neutral: grey[200] },
+    background: { paper: '#F8FAFF', default: '#F0F4FA', neutral: '#fff' },
     action: { active: grey[600], ...action },
   },
   dark: {

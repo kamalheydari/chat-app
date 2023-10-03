@@ -38,7 +38,7 @@ const LoginForm = () => {
     onSuccess: (data) => {
       toast.success(data.message)
       reset()
-      navigate('/' + routePaths.dashboard.app, { replace: true })
+      navigate('/' + routePaths.dashboard.root, { replace: true })
     },
   })
   // ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ / Query / ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
@@ -63,7 +63,7 @@ const LoginForm = () => {
             },
           }}
         >
-          Create Account
+          Login to Account
         </LoadingButton>
       </Stack>
     </form>

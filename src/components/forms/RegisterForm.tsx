@@ -40,7 +40,7 @@ const RegisterForm = () => {
     onSuccess: (data) => {
       toast.success(data.message)
       reset()
-      navigate('/' + routePaths.dashboard.app, { replace: true })
+      navigate('/' + routePaths.dashboard.root, { replace: true })
     },
   })
   // ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃ / Query / ⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃⌃
