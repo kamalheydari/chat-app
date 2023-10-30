@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <BrowserRouter>
             <App />
             <Toaster position="bottom-right" />
-            <ReactQueryDevtools />
+            {/* <ReactQueryDevtools /> */}
           </BrowserRouter>
         </QueryClientProvider>
       </ThemeProvider>
